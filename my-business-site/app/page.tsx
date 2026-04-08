@@ -110,11 +110,11 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* Navigation Bar */}
       <header className="w-full h-20 flex items-center justify-between px-8 md:px-16 lg:px-24 border-b border-white/5 sticky top-0 bg-black/40 backdrop-blur-2xl z-50 transition-all">
-        <a href="#" className="flex hover:opacity-80 transition-opacity">
+        <a href="#" className="flex items-center hover:opacity-80 transition-opacity">
           <img 
             src="/logo.png" 
             alt="Blingkkami Logo" 
-            className="h-[40px] md:h-[48px] px-2 md:px-3 w-auto object-contain relative -top-1" 
+            className="h-[40px] md:h-[48px] px-2 md:px-3 w-auto object-contain" 
             style={{ mixBlendMode: 'screen' }}
           />
         </a>
