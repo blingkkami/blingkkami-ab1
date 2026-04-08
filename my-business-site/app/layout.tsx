@@ -10,6 +10,28 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "블링까미 | 프리랜서 AI 상세페이지 디자이너",
   description: "AI 기반 상세페이지 디자인 포트폴리오 및 의뢰 사이트입니다.",
+  openGraph: {
+    title: "블링까미 | 프리랜서 AI 상세페이지 디자이너",
+    description: "AI 기반 상세페이지 디자인 포트폴리오 및 의뢰 사이트입니다.",
+    url: "https://blingkkami-ab1.vercel.app",
+    siteName: "블링까미",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "블링까미 서비스 미리보기",
+      },
+    ],
+    locale: "ko_KR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "블링까미 | 프리랜서 AI 상세페이지 디자이너",
+    description: "AI 기반 상세페이지 디자인 포트폴리오 및 의뢰 사이트입니다.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
