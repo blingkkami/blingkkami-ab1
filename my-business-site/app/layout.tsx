@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "블링까미 | 프리랜서 AI 상세페이지 디자이너",
     description: "AI 기반 상세페이지 디자인 포트폴리오 및 의뢰 사이트입니다.",
-    url: "https://blingkkami-ab1.vercel.app",
+    url: "https://blingkkami-ab1-6hei.vercel.app",
     siteName: "블링까미",
     images: [
       {

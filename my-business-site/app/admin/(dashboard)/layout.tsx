@@ -1,6 +1,15 @@
 import type { Metadata } from 'next';
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { 
+  LayoutDashboard, 
+  Users, 
+  MessageSquare, 
+  Settings, 
+  LogOut, 
+  ExternalLink,
+  Bell
+} from 'lucide-react';
 
 export const metadata: Metadata = {
   title: '관리자 센터 | Blingkkami',
@@ -8,56 +17,77 @@ export const metadata: Metadata = {
 };
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
-  // === 핵심 보안: 페이지별 인증 체크 로직 ===
-  // 로그인 안 된 사용자가 접근하면 무조건 튕겨냅니다.
   const cookieStore = await cookies();
   if (cookieStore.get("admin_auth")?.value !== "true") {
-    redirect("/admin"); // 로그인 페이지로 즉시 리다이렉트
+    redirect("/admin");
   }
 
-  // 관리자 전용 레이아웃 렌더링
   return (
-    <div className="flex min-h-screen bg-[#0A0A0A] text-white">
-      {/* Sidebar Area */}
-      <aside className="w-64 bg-black border-r border-white/10 hidden md:flex flex-col sticky top-0 h-screen">
-        <div className="h-20 flex items-center px-8 border-b border-white/10">
-          <span className="font-bold text-lg text-primary tracking-tight">✨ Admin Panel</span>
+    <div className="flex min-h-screen bg-[#0A0A0A] text-zinc-100 selection:bg-primary/30">
+      {/* CRM Sidebar */}
+      <aside className="w-64 bg-black border-r border-zinc-800 hidden md:flex flex-col sticky top-0 h-screen z-50">
+        <div className="p-6 flex items-center gap-3 border-b border-zinc-800">
+          <img 
+            src="/logo.png" 
+            alt="Blingkkami Logo" 
+            className="h-8 w-auto object-contain" 
+            style={{ mixBlendMode: 'screen' }}
+          />
+          <h1 className="text-lg font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60">CRM</h1>
         </div>
         
-        <nav className="flex-1 py-8 px-4 flex flex-col gap-2">
-          <span className="text-xs font-bold text-white/40 uppercase tracking-wider px-4 mb-2">Management</span>
-          <a href="/admin/dashboard" className="px-4 py-3 rounded-xl hover:bg-white/5 transition-colors text-white/80 hover:text-white font-medium flex items-center gap-3">
-            <span>📊</span> 대시보드
+        <nav className="flex-1 p-4 space-y-2 mt-4">
+          <div className="px-4 py-2 text-[10px] font-bold text-zinc-500 uppercase tracking-widest">General</div>
+          <a href="/admin/dashboard" className="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary rounded-xl font-medium transition-all hover:scale-[1.02] active:scale-95">
+            <LayoutDashboard size={20} />
+            대시보드
           </a>
-          <a href="/admin/inquiries" className="px-4 py-3 rounded-xl hover:bg-white/5 transition-colors text-white/80 hover:text-white font-medium flex items-center gap-3">
-            <span>📨</span> 문의 내역 관리
+          <a href="/admin/dashboard" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:bg-zinc-900 hover:text-primary-light rounded-xl font-medium transition-all hover:translate-x-1">
+            <Users size={20} />
+            클라이언트 관리
           </a>
-          <a href="/admin/payments" className="px-4 py-3 rounded-xl hover:bg-white/5 transition-colors text-white/80 hover:text-white font-medium flex items-center gap-3">
-            <span>💳</span> 결제 내역 관리
+          <a href="/admin/dashboard" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:bg-zinc-900 hover:text-primary-light rounded-xl font-medium transition-all hover:translate-x-1">
+            <MessageSquare size={20} />
+            문의 내역 (Inbox)
+          </a>
+          <div className="px-4 py-2 mt-4 text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Notifications</div>
+          <a href="#" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:bg-zinc-900 hover:text-primary-light rounded-xl font-medium transition-all hover:translate-x-1">
+            <Bell size={20} />
+            알림 센터
           </a>
         </nav>
         
-        <div className="p-4 border-t border-white/10 flex flex-col gap-2">
-          {/* 로그아웃 버튼 로직 */}
-          <form action={async () => {
-             "use server";
-             const store = await cookies();
-             store.delete("admin_auth");
-             redirect("/admin");
-          }}>
-            <button type="submit" className="w-full px-4 py-3 text-center rounded-xl bg-white/5 hover:bg-white/10 text-sm font-bold transition-colors">
-              🔒 안전하게 로그아웃
-            </button>
-          </form>
-          
-          <a href="/" className="block px-4 py-3 text-center rounded-xl bg-white/5 hover:bg-white/10 text-sm font-bold transition-colors">
-            🏠 내 퍼블릭 사이트로
+        <div className="p-4 border-t border-zinc-800 space-y-2">
+          <a href="#" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:bg-zinc-900 hover:text-primary-light rounded-xl font-medium transition-all">
+            <Settings size={20} />
+            설정
           </a>
+          
+          <div className="flex flex-col gap-1 mt-2">
+            <form action={async () => {
+               "use server";
+               const store = await cookies();
+               store.delete("admin_auth");
+               redirect("/admin");
+            }}>
+              <button type="submit" className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-zinc-900/50 hover:bg-zinc-900 text-zinc-400 hover:text-rose-400 text-sm font-bold transition-all group">
+                <span className="flex items-center gap-3"><LogOut size={18} /> 로그아웃</span>
+                <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+              </button>
+            </form>
+            
+            <a href="/" className="flex items-center justify-between px-4 py-3 rounded-xl bg-zinc-900/50 hover:bg-zinc-900 text-zinc-400 hover:text-white text-sm font-bold transition-all group">
+              <span className="flex items-center gap-3"><ExternalLink size={18} /> 홈페이지로</span>
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+            </a>
+          </div>
         </div>
       </aside>
 
       {/* Main Content Area */}
-      <main className="flex-1 flex flex-col p-8 md:p-12 w-full max-w-full relative">
+      <main className="flex-1 flex flex-col p-6 md:p-10 w-full max-w-full relative overflow-x-hidden">
+        {/* Subtle Background Decoration */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none -z-10" />
         {children}
       </main>
     </div>

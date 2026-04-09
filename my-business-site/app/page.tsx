@@ -143,16 +143,16 @@ export default function Home() {
               transform: `perspective(1200px) rotateY(${mousePos.x * 12}deg) rotateX(${-mousePos.y * 12}deg) translateX(${mousePos.x * -20}px) translateY(${mousePos.y * -20}px)`
             }}
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-6 tracking-tight cursor-default flex flex-col items-center gap-2">
-              <span className="inline-block transition-all duration-500 ease-out hover:scale-110 hover:-translate-y-2 text-white/90 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)] text-3xl md:text-4xl lg:text-5xl mb-2">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-6 tracking-tight cursor-default flex flex-col items-center gap-2 break-keep">
+              <span className="inline-block transition-all duration-500 ease-out hover:scale-110 hover:-translate-y-2 text-white/90 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)] text-2xl md:text-4xl lg:text-5xl mb-2">
                 쿠팡·네이버 <b className="text-transparent bg-clip-text bg-gradient-to-br from-[#FFD1DF] via-[#FFE4E6] to-[#FFB6C1] drop-shadow-[0_0_15px_rgba(255,209,223,0.4)]">리뷰까지 읽어주는</b>
               </span>
-              <span className="inline-block transition-all duration-500 ease-out hover:scale-[1.05] hover:-translate-y-3 hover:drop-shadow-[0_20px_40px_rgba(255,209,223,0.9)] text-transparent bg-clip-text bg-gradient-to-br from-[#FFD1DF] via-[#FFE4E6] to-[#FFB6C1] drop-shadow-[0_0_20px_rgba(255,209,223,0.3)] mt-2 font-bold max-w-[900px]">
+              <span className="inline-block transition-all duration-500 ease-out hover:scale-[1.05] hover:-translate-y-3 hover:drop-shadow-[0_20px_40px_rgba(255,209,223,0.9)] text-transparent bg-clip-text bg-gradient-to-br from-[#FFD1DF] via-[#FFE4E6] to-[#FFB6C1] drop-shadow-[0_0_20px_rgba(255,209,223,0.3)] mt-2 font-bold max-w-[900px] text-4xl md:text-6xl lg:text-7xl">
                 AI 상세페이지 스튜디오
               </span>
             </h1>
           </div>
-          <p className="text-lg md:text-xl text-white/70 mb-10 max-w-3xl font-light leading-relaxed">
+          <p className="text-lg md:text-xl text-white/70 mb-10 max-w-3xl font-light leading-relaxed break-keep">
             클라이언트가 앱에서 남긴 브리프와<br className="hidden md:block"/>
             카테고리 상위 상세페이지·<span className="text-transparent bg-clip-text bg-gradient-to-br from-[#FFD1DF] via-[#FFE4E6] to-[#FFB6C1] font-bold">경쟁사</span>·쿠팡·네이버 <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#FFD1DF] via-[#FFE4E6] to-[#FFB6C1] font-bold">리뷰</span> 데이터를 분석해<br className="hidden md:block"/>
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#FFD1DF] via-[#FFE4E6] to-[#FFB6C1] font-bold">전환</span>에 최적화된 <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#FFD1DF] via-[#FFE4E6] to-[#FFB6C1] font-bold">Hook–Body–CTA</span> 구조와 카피를 설계합니다.

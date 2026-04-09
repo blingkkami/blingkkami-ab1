@@ -35,10 +35,9 @@
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
-  cursor: url('/ribbon.svg') 12 12, auto;
   overflow-x: hidden;
 }
 
 a, button, [role="button"], input, select, textarea, label {
-  cursor: url('/ribbon-pointer.svg') 12 12, pointer !important;
+  cursor: pointer;
 }
