@@ -1,29 +1,36 @@
 import { supabase } from '@/lib/supabase';
-import DashboardContainer from './DashboardContainer';
+import DashboardSummaryContainer from './DashboardSummaryContainer';
 
 export const dynamic = 'force-dynamic';
 
 export default async function AdminDashboard() {
-  // Supabase에서 최신 문의 내역 10건 가져오기
-  const { data: inquiries, error } = await supabase
+  // 1. Fetch recent inquiries
+  const { data: inquiries } = await supabase
     .from('inquiries')
     .select('*')
     .order('created_at', { ascending: false })
-    .limit(10);
+    .limit(5);
 
-  if (error) {
-    console.error('Supabase Fetch Error:', error);
-  }
+  // 2. Fetch all clients for stats and upcoming deadlines
+  const { data: clients } = await supabase
+    .from('clients')
+    .select('*')
+    .order('created_at', { ascending: false });
 
-  // 데이터 매핑 (기존 컴포넌트 호환용)
-  const mappedInquiries = (inquiries || []).map(item => ({
+  // Data mapping for consistency
+  const mappedInquiries = (inquiries || []).map(item => ({ ...item }));
+  const mappedClients = (clients || []).map(item => ({
     ...item,
-    date: new Date(item.created_at).toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })
+    paymentStatus: item.payment_status,
+    createdAt: item.created_at
   }));
 
   return (
     <div className="w-full h-full">
-      <DashboardContainer initialInquiries={mappedInquiries} />
+      <DashboardSummaryContainer 
+        recentInquiries={mappedInquiries} 
+        clients={mappedClients} 
+      />
     </div>
   );
 }

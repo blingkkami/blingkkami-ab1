@@ -38,17 +38,21 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         
         <nav className="flex-1 p-4 space-y-2 mt-4">
           <div className="px-4 py-2 text-[10px] font-bold text-zinc-500 uppercase tracking-widest">General</div>
-          <a href="/admin/dashboard" className="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary rounded-xl font-medium transition-all hover:scale-[1.02] active:scale-95">
+          <a href="/admin/dashboard" className="flex items-center gap-3 px-4 py-3 hover:bg-zinc-900 text-zinc-400 hover:text-primary rounded-xl font-medium transition-all hover:translate-x-1">
             <LayoutDashboard size={20} />
-            대시보드
+            대시보드 (Overview)
           </a>
-          <a href="/admin/dashboard" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:bg-zinc-900 hover:text-primary-light rounded-xl font-medium transition-all hover:translate-x-1">
+          <a href="/admin/clients" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:bg-zinc-900 hover:text-primary-light rounded-xl font-medium transition-all hover:translate-x-1">
             <Users size={20} />
             클라이언트 관리
           </a>
-          <a href="/admin/dashboard" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:bg-zinc-900 hover:text-primary-light rounded-xl font-medium transition-all hover:translate-x-1">
+          <a href="/admin/inquiries" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:bg-zinc-900 hover:text-primary-light rounded-xl font-medium transition-all hover:translate-x-1">
             <MessageSquare size={20} />
             문의 내역 (Inbox)
+          </a>
+          <a href="/admin/payments" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:bg-zinc-900 hover:text-primary-light rounded-xl font-medium transition-all hover:translate-x-1">
+            <ExternalLink size={20} />
+            결제 및 정산
           </a>
           <div className="px-4 py-2 mt-4 text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Notifications</div>
           <a href="#" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:bg-zinc-900 hover:text-primary-light rounded-xl font-medium transition-all hover:translate-x-1">
