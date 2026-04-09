@@ -35,16 +35,16 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div className="flex flex-col gap-2">
           <label className="text-sm font-medium text-white/80">이름</label>
-          <input type="text" name="name" required className="w-full bg-[#FFB6C1]/20 border border-[#FFB6C1]/40 rounded-xl px-4 py-3 text-white placeholder:text-[#FFB6C1]/50 focus:outline-none focus:border-[#FFB6C1] focus:ring-4 focus:ring-[#FFB6C1]/20 focus:bg-[#FFB6C1]/30 transition-all hover:border-[#FFB6C1]/60" placeholder="홍길동" />
+          <input type="text" name="name" required className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/20 focus:bg-white/15 transition-all" placeholder="홍길동" />
         </div>
         <div className="flex flex-col gap-2">
           <label className="text-sm font-medium text-white/80">연락처 (이메일 또는 카카오톡 ID)</label>
-          <input type="text" name="contact" required className="w-full bg-[#FFB6C1]/20 border border-[#FFB6C1]/40 rounded-xl px-4 py-3 text-white placeholder:text-[#FFB6C1]/50 focus:outline-none focus:border-[#FFB6C1] focus:ring-4 focus:ring-[#FFB6C1]/20 focus:bg-[#FFB6C1]/30 transition-all hover:border-[#FFB6C1]/60" placeholder="연락 가능한 정보를 남겨주세요" />
+          <input type="text" name="contact" required className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/20 focus:bg-white/15 transition-all" placeholder="연락 가능한 정보를 남겨주세요" />
         </div>
       </div>
       <div className="flex flex-col gap-2">
         <label className="text-sm font-medium text-white/80">상품 링크 또는 간단한 상품 설명</label>
-        <input type="text" name="product" required className="w-full bg-[#FFB6C1]/20 border border-[#FFB6C1]/40 rounded-xl px-4 py-3 text-white placeholder:text-[#FFB6C1]/50 focus:outline-none focus:border-[#FFB6C1] focus:ring-4 focus:ring-[#FFB6C1]/20 focus:bg-[#FFB6C1]/30 transition-all hover:border-[#FFB6C1]/60" placeholder="기존 링크나 예정된 상품의 정보를 적어주세요" />
+        <input type="text" name="product" required className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/20 focus:bg-white/15 transition-all" placeholder="기존 링크나 예정된 상품의 정보를 적어주세요" />
       </div>
       <div className="flex flex-col gap-2">
         <label className="text-sm font-medium text-white/80">희망 패키지</label>
