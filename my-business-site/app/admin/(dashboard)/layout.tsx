@@ -62,7 +62,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         </nav>
         
         <div className="p-4 border-t border-zinc-800 space-y-2">
-          <a href="#" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:bg-zinc-900 hover:text-primary-light rounded-xl font-medium transition-all">
+          <a href="/admin/settings" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:bg-zinc-900 hover:text-primary-light rounded-xl font-medium transition-all">
             <Settings size={20} />
             설정
           </a>

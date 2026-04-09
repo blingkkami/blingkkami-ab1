@@ -1,6 +1,8 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
+import { supabase } from "@/lib/supabase";
+
 export default async function AdminLogin() {
   // 이미 인증된 쿠키(admin_auth)가 있다면 로그인 폼을 생략하고 바로 대시보드로 이동
   const cookieStore = await cookies();
@@ -11,10 +13,19 @@ export default async function AdminLogin() {
   // 간단한 로그인 처리 서버 액션
   async function loginAction(formData: FormData) {
     "use server";
-    const password = formData.get("password");
+    const password = formData.get("password") as string;
     
-    // 블링까미님 전용 임시 비밀번호 설정
-    if (password === "admin1234") {
+    // Supabase에서 저장된 관리자 비밀번호 가져오기
+    const { data } = await supabase
+      .from('site_settings')
+      .select('value')
+      .eq('key', 'admin_password')
+      .single();
+
+    const storedPassword = data?.value || "admin1234"; // 기본값 설정 (혹시 DB에 없을 경우)
+
+    // 블링까미님 전용 비밀번호 대조
+    if (password === storedPassword) {
       const store = await cookies();
       store.set("admin_auth", "true", { httpOnly: true, path: "/" });
       redirect("/admin/dashboard");

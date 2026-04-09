@@ -75,3 +75,21 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: '서버 에러' }, { status: 500 });
   }
 }
+
+export async function DELETE(request: Request) {
+  try {
+    const { id } = await request.json();
+    
+    const { error } = await supabase
+      .from('inquiries')
+      .delete()
+      .eq('id', id);
+
+    if (error) throw error;
+    
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error("Delete Error:", error);
+    return NextResponse.json({ error: '삭제 실패' }, { status: 500 });
+  }
+}
