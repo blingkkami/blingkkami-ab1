@@ -25,7 +25,7 @@ export default function ClientTable({ clients, onEdit, onDelete }: ClientTablePr
   return (
     <div className="bg-[#111111] rounded-2xl border border-zinc-800 overflow-hidden shadow-lg shadow-pink-900/10 mb-10">
       {/* Table Header / Controls */}
-      <div className="p-6 bg-gradient-to-r from-primary-light/80 to-primary/80 border-b border-primary/20 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="p-6 bg-gradient-to-r from-[#FFD1DF] to-[#FFB6C1] border-b border-[#FFD1DF]/20 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <h2 className="text-lg font-bold text-black">클라이언트 및 프로젝트 리스트</h2>
         
         <div className="flex items-center gap-3">

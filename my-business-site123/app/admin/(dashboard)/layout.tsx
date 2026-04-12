@@ -28,9 +28,9 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       <aside className="w-64 bg-black border-r border-zinc-800 hidden md:flex flex-col sticky top-0 h-screen z-50">
         <div className="p-6 flex items-center gap-3 border-b border-zinc-800">
           <img 
-            src="/logo.png" 
+            src="/logo_b.png" 
             alt="Blingkkami Logo" 
-            className="h-8 w-auto object-contain" 
+            className="h-10 w-auto object-contain" 
             style={{ mixBlendMode: 'screen' }}
           />
           <h1 className="text-lg font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60">CRM</h1>

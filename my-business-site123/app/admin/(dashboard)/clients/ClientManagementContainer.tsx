@@ -71,7 +71,7 @@ export default function ClientManagementContainer() {
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div>
-          <h1 className="text-3xl font-black tracking-tighter text-white mb-2 underline decoration-primary decoration-4 underline-offset-8">
+          <h1 className="text-3xl font-black tracking-tighter text-white mb-2 underline decoration-[#FFD1DF] decoration-4 underline-offset-8">
             클라이언트 관리
           </h1>
           <p className="text-zinc-500 font-medium font-sans">모든 고객사 정보와 프로젝트 단계, 정산 현황을 마스터 관리합니다.</p>
@@ -88,7 +88,7 @@ export default function ClientManagementContainer() {
               setEditingClient(null);
               setIsModalOpen(true);
             }}
-            className="flex items-center gap-2 px-6 py-3 bg-primary text-black font-black rounded-2xl hover:bg-primary-light transition-all shadow-[0_0_20px_rgba(175,82,222,0.3)] hover:scale-105 active:scale-95"
+            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#FFD1DF] to-[#FFB6C1] text-pink-950 font-black rounded-2xl hover:opacity-90 transition-all shadow-[0_0_20px_rgba(255,182,193,0.3)] hover:scale-105 active:scale-95"
           >
             <UserPlus size={20} />
             신규모집 등록

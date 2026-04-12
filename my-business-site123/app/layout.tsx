@@ -9,19 +9,19 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://blingkkami-ab1-6hei.vercel.app"),
-  title: "블링까미 | 프리랜서 AI 상세페이지 디자이너",
-  description: "AI 기반 상세페이지 디자인 포트폴리오 및 의뢰 사이트입니다.",
+  title: "Blingkkami | Freelance AI Landing Page Designer",
+  description: "AI-based landing page design portfolio and commission site.",
   openGraph: {
-    title: "블링까미 | 프리랜서 AI 상세페이지 디자이너",
-    description: "AI 기반 상세페이지 디자인 포트폴리오 및 의뢰 사이트입니다.",
+    title: "Blingkkami | Freelance AI Landing Page Designer",
+    description: "AI-based landing page design portfolio and commission site.",
     url: "https://blingkkami-ab1-6hei.vercel.app",
-    siteName: "블링까미",
+    siteName: "Blingkkami",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "블링까미 서비스 미리보기",
+        url: "/logo_b.png",
+        width: 916,
+        height: 349,
+        alt: "Blingkkami Service Preview",
       },
     ],
     locale: "ko_KR",
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "블링까미 | 프리랜서 AI 상세페이지 디자이너",
-    description: "AI 기반 상세페이지 디자인 포트폴리오 및 의뢰 사이트입니다.",
-    images: ["/og-image.png"],
+    title: "Blingkkami | Freelance AI Landing Page Designer",
+    description: "AI-based landing page design portfolio and commission site.",
+    images: ["/logo_b.png"],
   },
 };
 
