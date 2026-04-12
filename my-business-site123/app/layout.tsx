@@ -8,6 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://blingkkami-ab1-6hei.vercel.app"),
   title: "블링까미 | 프리랜서 AI 상세페이지 디자이너",
   description: "AI 기반 상세페이지 디자인 포트폴리오 및 의뢰 사이트입니다.",
   openGraph: {
@@ -34,6 +35,7 @@ export const metadata: Metadata = {
   },
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -44,7 +46,10 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
       </head>
-      <body className={`${inter.variable} min-h-screen flex flex-col font-sans bg-background text-foreground antialiased`}>
+      <body 
+        className={`${inter.variable} min-h-screen flex flex-col font-sans bg-background text-foreground antialiased`}
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>

@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
-        source: "/어드민",
+        source: encodeURI("/어드민"),
         destination: "/admin",
       },
     ];
