@@ -132,6 +132,7 @@ export default function Home() {
           <a href="#about" className="hover:text-white transition-colors">Studio</a>
           <a href="#portfolio" className="hover:text-white transition-colors">Work</a>
           <a href="#pricing" className="hover:text-white transition-colors">Pricing</a>
+          <a href="#contact" className="hover:text-white transition-colors">Contact</a>
         </nav>
         <a href="#contact" className="px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-full hover:bg-purple-600 transition-colors focus:outline-none focus:ring-4 focus:ring-primary/20 cursor-pointer">
           문의하기
@@ -530,12 +531,6 @@ export default function Home() {
       </main>
 
       <footer className="w-full py-12 border-t border-white/5 text-center bg-black/40">
-        <div className="mb-6 flex justify-center gap-6 text-white/40 text-sm">
-          <a href="#about" className="hover:text-white transition-colors">Studio</a>
-          <a href="#portfolio" className="hover:text-white transition-colors">Work</a>
-          <a href="#pricing" className="hover:text-white transition-colors">Pricing</a>
-          <a href="#contact" className="hover:text-white transition-colors">Contact</a>
-        </div>
         <p className="text-sm text-white/20">© 2026 Blingkkami. All rights reserved.</p>
       </footer>
 
