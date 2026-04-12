@@ -55,7 +55,7 @@ export default async function AdminLogin() {
             <input type="password" name="password" required className="w-full bg-black/40 border border-white/10 px-4 py-3 rounded-xl focus:border-primary outline-none transition-colors text-white" placeholder="••••••••" />
           </div>
           
-          <button type="submit" className="w-full py-4 bg-primary text-white text-center font-bold rounded-xl hover:bg-purple-600 transition-colors shadow-[0_0_15px_rgba(107,63,160,0.5)]">
+          <button type="submit" className="w-full py-4 bg-gradient-to-r from-[#FFD1DF] to-[#FFB6C1] text-pink-950 text-center font-bold rounded-xl hover:opacity-90 transition-all shadow-[0_0_15px_rgba(255,182,193,0.3)]">
             안전하게 접속하기
           </button>
         </form>
