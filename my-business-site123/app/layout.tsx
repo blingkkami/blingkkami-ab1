@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     siteName: "블링까미",
     images: [
       {
-        url: "/logo_b.png",
-        width: 916,
-        height: 349,
+        url: "/og-main.png",
+        width: 1200,
+        height: 630,
         alt: "블링까미 서비스 미리보기",
       },
     ],
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "블링까미 | 프리랜서 AI 상세페이지 디자이너",
     description: "AI 기반 상세페이지 디자인 포트폴리오 및 의뢰 사이트입니다.",
-    images: ["/logo_b.png"],
+    images: ["/og-main.png"],
   },
 };
 
